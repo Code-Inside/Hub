@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<!--Don't delete this file. It is used for publishing Windows Azure WebJobs.-->
-<WebJobs>
-  <WebJob Project="CodeInside.Hub.Job" RelativePath="..\CodeInside.Hub.Job\CodeInside.Hub.Job.csproj" Schedule="continuous" />
-</WebJobs>
