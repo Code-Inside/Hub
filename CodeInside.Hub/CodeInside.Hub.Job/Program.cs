@@ -12,9 +12,9 @@ using System.Threading.Tasks;
 
 namespace CodeInside.Hub.Job
 {
-    class Program
+    public class Program
     {
-        static void Main()
+        public static void Main()
         {
             Trace.TraceInformation("Crawler Console App started.");
 
@@ -31,7 +31,8 @@ namespace CodeInside.Hub.Job
             host.Call(typeof(Program).GetMethod("SaveToAzure"), new { json });
         }
 
-        public static void SaveToAzure([Blob("crawler/result.json")]TextWriter writer, string json)
+        [NoAutomaticTrigger]
+        public static void SaveToAzure([Blob("hub/data.json")]TextWriter writer, string json)
         {
             writer.Write(json);
 
