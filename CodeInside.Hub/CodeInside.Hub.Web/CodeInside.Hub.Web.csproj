@@ -124,8 +124,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Properties\WebJobs.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Properties\ligershark.webjobs.targets" />
+    <Content Include="Properties\ligershark.webjobs.ext.targets" />
     <None Include="Properties\PublishProfiles\codeinside-hub-web.pubxml">
       <SubType>Designer</SubType>
     </None>
@@ -157,6 +160,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="webjobs.wpp.targets" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -168,6 +172,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeInside.Hub.Job\CodeInside.Hub.Job.csproj">
+      <Project>{00325FA3-70C5-435F-8013-15F05D1232A6}</Project>
+      <Name>CodeInside.Hub.Job</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
