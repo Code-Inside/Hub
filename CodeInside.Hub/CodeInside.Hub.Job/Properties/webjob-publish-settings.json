@@ -1,0 +1,9 @@
+﻿{
+  "$schema": "http://schemastore.org/schemas/json/webjob-publish-settings.json",
+  "webJobName": "CodeInside-Hub-Job",
+  "startTime": "2014-09-22T02:00:00+01:00",
+  "endTime": null,
+  "jobRecurrenceFrequency": "Day",
+  "interval": 1,
+  "runMode": "Scheduled"
+}
