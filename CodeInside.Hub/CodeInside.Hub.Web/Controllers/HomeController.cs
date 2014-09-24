@@ -25,7 +25,7 @@ namespace CodeInside.Hub.Web.Controllers
             viewModel.PersonsOfInterest = staticContent.PersonsOfInterest;
             viewModel.Name = staticContent.Name;
             viewModel.Description = staticContent.Description;
-
+            viewModel.CrawlerRunOn = crawlerRun.RunOn;
             return View(viewModel);
         }
 
