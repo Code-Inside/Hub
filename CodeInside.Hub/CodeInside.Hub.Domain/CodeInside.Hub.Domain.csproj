@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseCrawlerResult.cs" />
+    <Compile Include="Constants.cs" />
     <Compile Include="CrawlerRun.cs" />
     <Compile Include="Feed\FeedCrawler.cs" />
     <Compile Include="Feed\FeedCrawlerConfig.cs" />

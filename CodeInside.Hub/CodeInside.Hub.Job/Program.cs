@@ -21,11 +21,7 @@ namespace CodeInside.Hub.Job
             var crawlerResult = InvokeCrawler().Result;
             Trace.TraceInformation("Crawler succeeded - now convert and write to BlobStorage!");
 
-            var json = JsonConvert.SerializeObject(crawlerResult, new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.Objects,
-                TypeNameAssemblyFormat = System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple
-            });
+            var json = JsonConvert.SerializeObject(crawlerResult, Constants.CrawlerJsonSerializerSettings);
 
             var host = new JobHost();
             host.Call(typeof(Program).GetMethod("SaveToAzure"), new { json });

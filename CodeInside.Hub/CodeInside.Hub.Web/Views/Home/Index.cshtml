@@ -1,73 +1,32 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model CodeInside.Hub.Web.ViewModels.HubViewModel
+
+@{
+    ViewBag.Title = Model.Name;
 }
 <section>
     <h2><strong>//</strong>&nbsp;Team</h2>
 
     <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <img width="300" height="200" alt="Robert Muehsig" src="~/Content/Images/rmuehsig.png">
-                <div class="caption">
-                    <h3>Robert Muehsig</h3>
-                    <p>Software Developer - from Dresden, Germany, now living in Switzerland. ASP.NET MVP &amp; Web Geek.</p>
-                    <p>
-                        <a href="http://twitter.com/robert0muehsig" class="btn btn-xs btn-info">
-                            Twitter
-                        </a>
-                        <a href="https://github.com/robertmuehsig" class="btn btn-xs btn-info">
-                            GitHub
-                        </a>
-                        <a href="http://mvp.microsoft.com/en-us/mvp/Robert Muehsig-4020675" class="btn btn-xs btn-info">
-                            ASP.NET MVP
-                        </a>
-                        <a href="http://www.xing.com/profile/Robert_Muehsig" class="btn btn-xs btn-info">
-                            XING
-                        </a>
-                        <a href="https://speakerdeck.com/robertmuehsig" class="btn btn-xs btn-info">
-                            SpeakerDeck
-                        </a>
-                        <a href="http://stackoverflow.com/users/602449/robert-muehsig" class="btn btn-xs btn-info">
-                            Stack Overflow
-                        </a>
-                    </p>
+        @foreach (var person in Model.PersonsOfInterest)
+        {
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img width="300" height="200" alt="@person.Name" src="@Url.Content(person.Image)">
+                    <div class="caption">
+                        <h3>@person.Name</h3>
+                        <p>@person.Description</p>
+                        <p>
+                            @foreach (var link in person.Links)
+                            {
+                                <a href="@link.Href" class="btn btn-xs btn-info">
+                                    @link.Name
+                                </a>
+                            }
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <img width="300" height="200" alt="Oliver Guhr" src="~/Content/Images/oguhr.png">
-                <div class="caption">
-                    <h3>Oliver Guhr</h3>
-                    <p>Software Developer - from Dresden, Germany. Co-Blog-Author.</p>
-                    <p>
-                        <a href="http://twitter.com/oliverguhr" class="btn btn-xs btn-info">
-                            Twitter
-                        </a>
-                        <a href="https://github.com/oliverguhr" class="btn btn-xs btn-info">
-                            GitHub
-                        </a>
-                        <a href="http://www.xing.com/profile/Oliver_Guhr" class="btn btn-xs btn-info">
-                            XING
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <img width="300" height="200" alt="Antje Kilian" src="~/Content/Images/akilian.png">
-                <div class="caption">
-                    <h3>Antje Kilian</h3>
-                    <p>Geek Girl - from Dresden, Germany.</p>
-                    <p>
-                        <a href="http://www.xing.com/profile/Antje_Kilian5" class="btn btn-xs btn-info">
-                            XING
-                        </a>
-                    </p>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </section>
 <br>
