@@ -15,6 +15,12 @@ namespace CodeInside.Hub.Web
             hub.Name = "Code Inside Hub";
             hub.Description = "Code-Inside is a development project focused on the Microsoft Dev Platform.";
 
+            hub.LinksOfInterest = new List<LinkOfInterest>();
+            hub.LinksOfInterest.Add(new LinkOfInterest { Href = new Uri("https://github.com/Code-Inside/"), Name = "GitHub" });
+            hub.LinksOfInterest.Add(new LinkOfInterest { Href = new Uri("http://blog.codeinside.eu/"), Name = "Blog" });
+            hub.LinksOfInterest.Add(new LinkOfInterest { Href = new Uri("http://twitter.com/codeinsideblog"), Name = "Twitter" });
+            hub.LinksOfInterest.Add(new LinkOfInterest { Href = new Uri("https://www.facebook.com/CodeInsideBlog"), Name = "Facebook" });
+
             hub.PersonsOfInterest = new List<PersonOfInterest>();
             hub.PersonsOfInterest.Add(new PersonOfInterest
             {

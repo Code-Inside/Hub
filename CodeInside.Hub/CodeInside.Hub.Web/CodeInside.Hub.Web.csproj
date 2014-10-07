@@ -117,7 +117,7 @@
     </Compile>
     <Compile Include="Models\LinkOfInterest.cs" />
     <Compile Include="Models\PersonOfInterest.cs" />
-    <Compile Include="Models\Stack.cs" />
+    <Compile Include="Models\Hub.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -179,6 +179,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Navigation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

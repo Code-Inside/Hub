@@ -23,6 +23,7 @@ namespace CodeInside.Hub.Web.Controllers
 
             var viewModel = new HubViewModel();
             viewModel.PersonsOfInterest = staticContent.PersonsOfInterest;
+            viewModel.LinksOfInterest = staticContent.LinksOfInterest;
             viewModel.Name = staticContent.Name;
             viewModel.Description = staticContent.Description;
             viewModel.CrawlerRunOn = crawlerRun.RunOn;
