@@ -59,7 +59,7 @@ namespace CodeInside.Hub.Web
                         new LinkOfInterest { Href = new Uri("http://www.xing.com/profile/Antje_Kilian5"), Name = "XING"},
                     }
             });
-
+            
             return hub;
         } 
     }

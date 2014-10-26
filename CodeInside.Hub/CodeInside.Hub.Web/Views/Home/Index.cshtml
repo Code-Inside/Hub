@@ -1,8 +1,74 @@
-﻿@model CodeInside.Hub.Web.ViewModels.HubViewModel
+﻿@using Humanizer
+@model CodeInside.Hub.Web.ViewModels.HubViewModel
 
 @{
     ViewBag.Title = Model.Name;
 }
+<section>
+    <h2><strong>//</strong>&nbsp;Blog</h2>
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="list-group">
+                <a href="http://blog.codeinside.eu" class="list-group-item active">
+                    <h4 class="list-group-item-heading">Code Inside Blog</h4>
+                </a>
+                @foreach (var blogEntry in Model.Blog)
+                {
+                    <a href="@blogEntry.Href" class="list-group-item">
+                        <h4 class="list-group-item-heading">@blogEntry.Title</h4>
+                        <p class="list-group-item-text">
+                            Published @blogEntry.PublishedOn.Humanize() | @("Tweets".ToQuantity(blogEntry.TweetsCount))
+                        </p>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2><strong>//</strong>&nbsp;Social</h2>
+
+    <div class="row">
+
+        <div class="col-md-6">
+
+            <div class="list-group">
+                <a href="http://blog.codeinside.eu" class="list-group-item active">
+                    <h4 class="list-group-item-heading">Code Inside Team @@ GitHub</h4>
+                </a>
+                @foreach (var githubEntry in Model.GitHub)
+                {
+                    <a href="@githubEntry.Href" class="list-group-item">
+                        <h4 class="list-group-item-heading">@githubEntry.Title</h4>
+                        <p class="list-group-item-text">
+                            Published @githubEntry.PublishedOn.Humanize()
+                        </p>
+                    </a>
+                }
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+
+            <div class="list-group">
+                <a href="http://blog.codeinside.eu" class="list-group-item active">
+                    <h4 class="list-group-item-heading">Code Inside Team @@ Twitter</h4>
+                </a>
+                @foreach (var twitterEntry in Model.Twitter)
+                {
+                    <a href="http://twitter.com/codeinsideblog" class="list-group-item">
+                        <h4 class="list-group-item-heading">@twitterEntry.Content</h4>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
 <section>
     <h2><strong>//</strong>&nbsp;Team</h2>
 
@@ -30,3 +96,4 @@
     </div>
 </section>
 <br>
+<!-- CrawlerRunOn: @Model.CrawlerRunOn.Humanize() -->

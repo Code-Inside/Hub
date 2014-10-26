@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using CodeInside.Hub.Domain;
+using CodeInside.Hub.Domain.Feed;
+using CodeInside.Hub.Domain.Twitter;
 using CodeInside.Hub.Web.ViewModels;
+using Microsoft.Ajax.Utilities;
 using Newtonsoft.Json;
 
 namespace CodeInside.Hub.Web.Controllers
@@ -26,7 +29,49 @@ namespace CodeInside.Hub.Web.Controllers
             viewModel.LinksOfInterest = staticContent.LinksOfInterest;
             viewModel.Name = staticContent.Name;
             viewModel.Description = staticContent.Description;
+            
+            var blog = crawlerRun.Results.SingleOrDefault(x => x.Type == KnownCrawler.Feed && x.Key == "http://blog.codeinside.eu/feed");
+            if (blog != null)
+            {
+                var blogResult = (FeedCrawlerResult)blog;
+                viewModel.Blog = blogResult.FeedItems.OrderByDescending(x => x.PublishedOn).Take(5).ToList();
+            }
+
+            var teamTwitter = crawlerRun.Results.Where(x => x.Type == KnownCrawler.Twitter &&
+                                                      (x.Key == "robert0muehsig" ||
+                                                       x.Key == "oliverguhr") ||
+                                                       x.Key == "codeinsideblog").ToList();
+            if (teamTwitter.Any())
+            {
+                viewModel.Twitter = new List<TwitterCrawlerResult.Tweet>();
+                foreach (var baseCrawlerResult in teamTwitter)
+                {
+                    var twitterResults = (TwitterCrawlerResult)baseCrawlerResult;
+                    viewModel.Twitter.AddRange(twitterResults.Tweets);
+                }
+
+                viewModel.Twitter = viewModel.Twitter.Take(5).ToList();
+            }
+
+            var github = crawlerRun.Results.Where(x => x.Type == KnownCrawler.Feed && 
+                                                       (x.Key == "https://github.com/robertmuehsig.atom" || 
+                                                        x.Key == "https://github.com/oliverguhr.atom")).ToList();
+            if (github.Any())
+            {
+                viewModel.GitHub = new List<FeedCrawlerResult.FeedItem>();
+                foreach (var baseCrawlerResult in github)
+                {
+                    var gitHubResults = (FeedCrawlerResult)baseCrawlerResult;
+                    viewModel.GitHub.AddRange(gitHubResults.FeedItems);
+                }
+
+                viewModel.GitHub = viewModel.GitHub.OrderByDescending(x => x.PublishedOn).Take(5).ToList();
+            }
+
+
             viewModel.CrawlerRunOn = crawlerRun.RunOn;
+
+
             return View(viewModel);
         }
 
