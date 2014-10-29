@@ -24,7 +24,7 @@ namespace CodeInside.Hub.Web
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/metro-bootstrap.css",
+                      "~/Content/magic-bootstrap.css",
                       "~/Content/site.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,

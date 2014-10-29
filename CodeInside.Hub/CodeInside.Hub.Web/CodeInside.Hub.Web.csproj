@@ -133,8 +133,12 @@
     <Content Include="Content\Images\hero.png" />
     <Content Include="Content\Images\logobw_ci.png" />
     <Content Include="Content\Images\logo_ci_hub.png" />
+    <Content Include="Content\Images\logo_white_36x32.png" />
+    <Content Include="Content\Images\logo_white_51x45.png" />
     <Content Include="Content\Images\oguhr.png" />
     <Content Include="Content\Images\rmuehsig.png" />
+    <Content Include="Content\magic-bootstrap-min.css" />
+    <Content Include="Content\magic-bootstrap.css" />
     <Content Include="Content\metro-bootstrap.css" />
     <Content Include="Content\metro-bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -149,6 +153,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\magic-bootstrap.less" />
     <None Include="Properties\PublishProfiles\codeinside-hub-web.pubxml">
       <SubType>Designer</SubType>
     </None>
