@@ -146,10 +146,6 @@
     <Content Include="Content\Images\logo_white_36x32.png" />
     <Content Include="Content\Images\oguhr.png" />
     <Content Include="Content\Images\rmuehsig.png" />
-    <Content Include="Content\magic-bootstrap-min.css" />
-    <Content Include="Content\magic-bootstrap.css" />
-    <Content Include="Content\metro-bootstrap.css" />
-    <Content Include="Content\metro-bootstrap.min.css" />
     <Content Include="favicon-160x160.png" />
     <Content Include="favicon-16x16.png" />
     <Content Include="favicon-192x192.png" />
@@ -166,13 +162,9 @@
     <Content Include="mstile-70x70.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Content\metro-bootstrap.css.map" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\magic-bootstrap.less" />
     <None Include="Properties\PublishProfiles\codeinside-hub-web.pubxml">
       <SubType>Designer</SubType>
     </None>
