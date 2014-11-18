@@ -56,6 +56,7 @@ namespace CodeInside.Hub.Web
                 Image = "~/Content/Images/akilian.png",
                 Links = new List<LinkOfInterest>
                     {
+                        new LinkOfInterest { Href = new Uri("https://twitter.com/Antje_Kilian"), Name = "Twitter"},
                         new LinkOfInterest { Href = new Uri("http://www.xing.com/profile/Antje_Kilian5"), Name = "XING"},
                     }
             });
