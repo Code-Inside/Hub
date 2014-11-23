@@ -40,9 +40,11 @@ namespace CodeInside.Hub.Job
             var config = new MasterCrawlerConfig();
             config.Feeds = "http://blogin.codeinside.eu/feed;http://blog.codeinside.eu/feed;https://github.com/robertmuehsig.atom;https://github.com/oliverguhr.atom";
             config.TwitterHandles = "codeinsideblog;robert0muehsig;oliverguhr";
-            config.TwitterConsumerKey = ConfigurationManager.AppSettings["TwitteroAuthConsumerKey"];
-            config.TwitterConsumerSecret = ConfigurationManager.AppSettings["TwitteroAuthConsumerSecret"];
-            var crawler = new MasterCrawler(config);
+
+            var secrets = new MasterCrawlerSecrets();
+            secrets.TwitterConsumerKey = ConfigurationManager.AppSettings["TwitteroAuthConsumerKey"];
+            secrets.TwitterConsumerSecret = ConfigurationManager.AppSettings["TwitteroAuthConsumerSecret"];
+            var crawler = new MasterCrawler(config, secrets);
 
             return crawler.RunAllCrawlers();
         }
