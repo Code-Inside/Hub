@@ -20,9 +20,14 @@ namespace CodeInside.Hub.Domain.Twitter
         public TwitterCrawlerConfig Config { get; set; }
         public List<TwitterCrawlerResult> DoWork()
         {
+            throw new NotImplementedException("Use DoWorkAsync.");
+        }
+
+        public async Task<List<TwitterCrawlerResult>> DoWorkAsync()
+        {
             var results = new List<TwitterCrawlerResult>();
 
-            var oauth = GetTwitterAccessToken(Config.ConsumerKey, Config.ConsumerSecret).Result;
+            var oauth = await GetTwitterAccessToken(Config.ConsumerKey, Config.ConsumerSecret);
 
             foreach (var handle in Config.Handles.Split(';'))
             {
@@ -32,18 +37,13 @@ namespace CodeInside.Hub.Domain.Twitter
                 result.Type = KnownCrawler.Twitter;
                 result.Tweets = new List<TwitterCrawlerResult.Tweet>();
 
-                var twitterResult = GetTwitterTimeline(oauth, handle).Result;
+                var twitterResult = await GetTwitterTimeline(oauth, handle);
                 result.Tweets.AddRange(new List<TwitterCrawlerResult.Tweet>(twitterResult));
 
                 results.Add(result);
             }
 
             return results;
-        }
-
-        public Task<List<TwitterCrawlerResult>> DoWorkAsync()
-        {
-            throw new NotImplementedException();
         }
 
         private static async Task<string> GetTwitterAccessToken(string consumerKey, string consumerSecret)

@@ -39,7 +39,7 @@ namespace CodeInside.Hub.Domain
                 twitterCrawler.Config.ConsumerKey = _secrets.TwitterConsumerKey;
                 twitterCrawler.Config.ConsumerSecret = _secrets.TwitterConsumerSecret;
 
-                var twitterResults = twitterCrawler.DoWork();
+                var twitterResults = await twitterCrawler.DoWorkAsync();
                 crawlerRunResult.Results.AddRange(twitterResults);
             }
 
