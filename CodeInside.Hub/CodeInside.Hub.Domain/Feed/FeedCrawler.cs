@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -107,7 +108,7 @@ namespace CodeInside.Hub.Domain.Feed
 
         public List<FeedCrawlerResult> DoWork()
         {
-            return new List<FeedCrawlerResult>();
+            throw new NotImplementedException("Use DoWorkAsync.");
         }
     }
 }
