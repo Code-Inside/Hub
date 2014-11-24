@@ -64,6 +64,7 @@
     <Compile Include="KnownCrawler.cs" />
     <Compile Include="MasterCrawler.cs" />
     <Compile Include="MasterCrawlerConfig.cs" />
+    <Compile Include="MasterCrawlerSecrets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Twitter\TwitterCrawler.cs" />
     <Compile Include="Twitter\TwitterCrawlerConfig.cs" />
