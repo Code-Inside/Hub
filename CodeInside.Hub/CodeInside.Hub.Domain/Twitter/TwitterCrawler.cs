@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace CodeInside.Hub.Domain.Twitter
@@ -21,9 +22,7 @@ namespace CodeInside.Hub.Domain.Twitter
         {
             var results = new List<TwitterCrawlerResult>();
 
-            
             var oauth = GetTwitterAccessToken(Config.ConsumerKey, Config.ConsumerSecret).Result;
-
 
             foreach (var handle in Config.Handles.Split(';'))
             {
@@ -85,18 +84,7 @@ namespace CodeInside.Hub.Domain.Twitter
 
             string timeline = await response.Content.ReadAsStringAsync();
 
-            var jTimeline = JArray.Parse(timeline);
-            var textNodes = jTimeline.Children()["text"];
-
-            var textValues = textNodes.Values<string>();
-
-            var resultForThisHandle = new List<TwitterCrawlerResult.Tweet>();
-
-            foreach (var value in textValues)
-            {
-                resultForThisHandle.Add(new TwitterCrawlerResult.Tweet { Content = value });
-            }
-
+            var resultForThisHandle = JsonConvert.DeserializeObject<List<TwitterCrawlerResult.Tweet>>(timeline);
 
             return resultForThisHandle;
         }
