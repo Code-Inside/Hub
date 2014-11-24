@@ -3,9 +3,6 @@
   "WebJobs": [
     {
       "filePath": "../CodeInside.Hub.Job/CodeInside.Hub.Job.csproj"
-    },
-    {
-      "filePath": "../CodeInside.Hub.Job/CodeInside.Hub.Job.csproj"
     }
   ]
 }
