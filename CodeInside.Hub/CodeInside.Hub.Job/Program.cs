@@ -38,7 +38,7 @@ namespace CodeInside.Hub.Job
         public static Task<CrawlerRun> InvokeCrawler()
         {
             var config = new MasterCrawlerConfig();
-           // config.Feeds = "http://blogin.codeinside.eu/feed;http://blog.codeinside.eu/feed;https://github.com/robertmuehsig.atom;https://github.com/oliverguhr.atom";
+            config.Feeds = "http://blogin.codeinside.eu/feed;http://blog.codeinside.eu/feed;https://github.com/robertmuehsig.atom;https://github.com/oliverguhr.atom";
             config.TwitterHandles = "codeinsideblog;robert0muehsig;oliverguhr";
 
             var secrets = new MasterCrawlerSecrets();
