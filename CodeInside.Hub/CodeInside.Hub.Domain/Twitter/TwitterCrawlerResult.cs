@@ -7,7 +7,7 @@ namespace CodeInside.Hub.Domain.Twitter
     {
         public class Tweet
         {
-            [JsonProperty("id")]
+            [JsonProperty("id_str")]
             public string Id { get; set; }
 
             [JsonProperty("created_at")]
