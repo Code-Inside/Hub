@@ -1,4 +1,5 @@
 ﻿using System.Configuration;
+using System.Net.Http;
 using CodeInside.Hub.Domain;
 using Microsoft.Azure.WebJobs;
 using Newtonsoft.Json;
@@ -35,18 +36,22 @@ namespace CodeInside.Hub.Job
             Trace.TraceInformation("And... done.");
         }
 
-        public static Task<CrawlerRun> InvokeCrawler()
+        public static async Task<CrawlerRun> InvokeCrawler()
         {
-            var config = new MasterCrawlerConfig();
-            config.Feeds = "http://blogin.codeinside.eu/feed;http://blog.codeinside.eu/feed;https://github.com/robertmuehsig.atom;https://github.com/oliverguhr.atom";
-            config.TwitterHandles = "codeinsideblog;robert0muehsig;oliverguhr";
+            var client = new HttpClient();
+#if DEBUG
+            var configString = await client.GetStringAsync("https://raw.githubusercontent.com/Code-Inside/Hub/master/CrawlerConfig.json");
+#else
+            var configString = await client.GetStringAsync(ConfigurationManager.AppSettings["MasterCrawlerJsonConfigPath"]);
+#endif
+            var config = JsonConvert.DeserializeObject<MasterCrawlerConfig>(configString);
 
             var secrets = new MasterCrawlerSecrets();
             secrets.TwitterConsumerKey = ConfigurationManager.AppSettings["TwitteroAuthConsumerKey"];
             secrets.TwitterConsumerSecret = ConfigurationManager.AppSettings["TwitteroAuthConsumerSecret"];
             var crawler = new MasterCrawler(config, secrets);
 
-            return crawler.RunAllCrawlers();
+            return await crawler.RunAllCrawlers();
         }
     }
 }
