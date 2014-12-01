@@ -1,11 +1,12 @@
-﻿@model CodeInside.Hub.Web.ViewModels.HubViewModel
+﻿@using System.Configuration
+@model CodeInside.Hub.Web.ViewModels.HubViewModel
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="apple-touch-icon" sizes="57x57" href="~/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="114x114" href="~/apple-touch-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="72x72" href="~/apple-touch-icon-72x72.png">
@@ -25,6 +26,21 @@
     <meta name="msapplication-TileImage" content="~/mstile-144x144.png">
 
     <title>Code Inside Hub</title>
+
+    @if (string.IsNullOrWhiteSpace(ConfigurationManager.AppSettings[KnownConfigKeys.AppInsightKey]) == false)
+    {
+        <script type="text/javascript">
+            var appInsights = window.appInsights || function (config) {
+                function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
+            }({
+                instrumentationKey: "@ConfigurationManager.AppSettings[KnownConfigKeys.AppInsightKey]"
+            });
+
+            window.appInsights = appInsights;
+            appInsights.trackPageView();
+        </script>
+    }
+
     <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     @Styles.Render("~/Content/css")
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -51,7 +67,7 @@
     <div class="container">
         @RenderBody()
         <hr />
-        
+
         <footer>
             <div class="text-center center-block">
                 <p>-  <a href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons</a> @DateTime.Now.Year Code Inside Team -</p>
