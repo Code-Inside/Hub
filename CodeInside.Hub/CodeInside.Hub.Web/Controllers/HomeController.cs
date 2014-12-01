@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 using CodeInside.Hub.Domain;
 using CodeInside.Hub.Domain.Feed;
 using CodeInside.Hub.Domain.Twitter;
 using CodeInside.Hub.Web.ViewModels;
-using Microsoft.Ajax.Utilities;
 using Newtonsoft.Json;
 
 namespace CodeInside.Hub.Web.Controllers
