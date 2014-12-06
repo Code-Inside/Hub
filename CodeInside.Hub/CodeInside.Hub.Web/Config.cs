@@ -50,7 +50,7 @@ namespace CodeInside.Hub.Web
             hub.PersonsOfInterest.Add(new PersonOfInterest
             {
                 Name = "Antje Kilian",
-                Description = "Geek Girl - from Dresden, Germany.",
+                Description = "IT-Law consultant, translator and Geek Girl - from Dresden, Germany.",
                 Image = "~/Content/Images/akilian.png",
                 Links = new List<LinkOfInterest>
                     {
