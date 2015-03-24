@@ -60,7 +60,16 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Sloader.Crawler">
+      <HintPath>..\packages\Sloader.Crawler.0.1\lib\net45\Sloader.Crawler.dll</HintPath>
+    </Reference>
+    <Reference Include="Sloader.Crawler.Config">
+      <HintPath>..\packages\Sloader.Crawler.Config.0.2\lib\net45\Sloader.Crawler.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="Sloader.Results">
+      <HintPath>..\packages\Sloader.Results.0.1\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Sloader.Results.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -82,6 +91,12 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WorldDomination.HttpClient.Helpers">
+      <HintPath>..\packages\WorldDomination.HttpClient.Helpers.2.0\lib\net45\WorldDomination.HttpClient.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>..\packages\YamlDotNet.3.5.1\lib\net35\YamlDotNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
