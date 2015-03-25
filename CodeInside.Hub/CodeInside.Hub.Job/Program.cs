@@ -23,13 +23,19 @@ namespace CodeInside.Hub.Job
         {
             Trace.TraceInformation("Crawler Console App started.");
 
-            var crawlerResult = InvokeLegacyCrawler().Result;
+            var legacyCrawlerResult = InvokeLegacyCrawler().Result;
+            Trace.TraceInformation("Legacy Crawler succeeded - now convert and write to BlobStorage!");
+
+            var crawlerResult = InvokeCrawler().Result;
             Trace.TraceInformation("Crawler succeeded - now convert and write to BlobStorage!");
 
+            var legacyjson = JsonConvert.SerializeObject(legacyCrawlerResult, Constants.CrawlerJsonSerializerSettings);
             var json = JsonConvert.SerializeObject(crawlerResult, Constants.CrawlerJsonSerializerSettings);
 
             var host = new JobHost();
-            host.Call(typeof(Program).GetMethod("SaveToAzureLegacy"), new { json });
+            host.Call(typeof(Program).GetMethod("SaveToAzure"), new { json });
+
+            host.Call(typeof(Program).GetMethod("SaveToAzureLegacy"), new { legacyjson });
         }
 
         [NoAutomaticTrigger]
