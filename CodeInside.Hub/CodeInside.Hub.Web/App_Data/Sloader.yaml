@@ -1,5 +1,5 @@
 ﻿FeedsToCrawl:
-- Url: http://blogin.codeinside.eu/feed
+- Url: http://blog.codeinside.eu/feed
   LoadSocialLinkCounters: true
 - Url: https://github.com/robertmuehsig.atom
   LoadSocialLinkCounters: false

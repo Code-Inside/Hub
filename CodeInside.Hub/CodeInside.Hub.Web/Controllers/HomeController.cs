@@ -3,11 +3,10 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using CodeInside.Hub.Domain;
-using CodeInside.Hub.Domain.Feed;
-using CodeInside.Hub.Domain.Twitter;
 using CodeInside.Hub.Web.ViewModels;
 using Newtonsoft.Json;
+using Sloader.Crawler.Config;
+using Sloader.Results;
 
 namespace CodeInside.Hub.Web.Controllers
 {
@@ -16,7 +15,7 @@ namespace CodeInside.Hub.Web.Controllers
         public async Task<ActionResult> Index()
         {
             var client = new HttpClient();
-            var json = await client.GetStringAsync("https://codeinside.blob.core.windows.net/hub/data.json");
+            var json = await client.GetStringAsync("https://codeinside.blob.core.windows.net/sloader/data.json");
             var crawlerRun = JsonConvert.DeserializeObject<CrawlerRun>(json, Constants.CrawlerJsonSerializerSettings);
 
             var staticContent = Config.GetCodeInsideHubStaticData();
@@ -27,32 +26,32 @@ namespace CodeInside.Hub.Web.Controllers
             viewModel.Name = staticContent.Name;
             viewModel.Description = staticContent.Description;
             
-            var blog = crawlerRun.Results.SingleOrDefault(x => x.Type == KnownCrawler.Feed && x.Key == "http://blog.codeinside.eu/feed");
+            var blog = crawlerRun.Results.SingleOrDefault(x => x.ResultType == KnownCrawler.Feed && x.ResultIdentifier == "http://blog.codeinside.eu/feed");
             if (blog != null)
             {
                 var blogResult = (FeedCrawlerResult)blog;
                 viewModel.Blog = blogResult.FeedItems.OrderByDescending(x => x.PublishedOn).Take(5).ToList();
             }
 
-            var teamTwitter = crawlerRun.Results.Where(x => x.Type == KnownCrawler.Twitter &&
-                                                      (x.Key == "robert0muehsig" ||
-                                                       x.Key == "oliverguhr") ||
-                                                       x.Key == "codeinsideblog").ToList();
+            var teamTwitter = crawlerRun.Results.Where(x => x.ResultType == KnownCrawler.TwitterTimeline &&
+                                                      (x.ResultIdentifier == "robert0muehsig" ||
+                                                       x.ResultIdentifier == "oliverguhr") ||
+                                                       x.ResultIdentifier == "codeinsideblog").ToList();
             if (teamTwitter.Any())
             {
-                viewModel.Twitter = new List<TwitterCrawlerResult.Tweet>();
+                viewModel.Twitter = new List<TwitterTimelineCrawlerResult.Tweet>();
                 foreach (var baseCrawlerResult in teamTwitter)
                 {
-                    var twitterResults = (TwitterCrawlerResult)baseCrawlerResult;
+                    var twitterResults = (TwitterTimelineCrawlerResult)baseCrawlerResult;
                     viewModel.Twitter.AddRange(twitterResults.Tweets);
                 }
 
                 viewModel.Twitter = viewModel.Twitter.Take(5).ToList();
             }
 
-            var github = crawlerRun.Results.Where(x => x.Type == KnownCrawler.Feed && 
-                                                       (x.Key == "https://github.com/robertmuehsig.atom" || 
-                                                        x.Key == "https://github.com/oliverguhr.atom")).ToList();
+            var github = crawlerRun.Results.Where(x => x.ResultType == KnownCrawler.Feed && 
+                                                       (x.ResultIdentifier == "https://github.com/robertmuehsig.atom" || 
+                                                        x.ResultIdentifier == "https://github.com/oliverguhr.atom")).ToList();
             if (github.Any())
             {
                 viewModel.GitHub = new List<FeedCrawlerResult.FeedItem>();

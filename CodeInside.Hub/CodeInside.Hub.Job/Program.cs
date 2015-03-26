@@ -1,6 +1,5 @@
 ﻿using System.Configuration;
 using System.Net.Http;
-using CodeInside.Hub.Domain;
 using Microsoft.Azure.WebJobs;
 using Newtonsoft.Json;
 using System;
@@ -11,9 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sloader.Crawler.Config;
-using Constants = CodeInside.Hub.Domain.Constants;
-using MasterCrawlerConfig = CodeInside.Hub.Domain.MasterCrawlerConfig;
-using MasterCrawlerSecrets = CodeInside.Hub.Domain.MasterCrawlerSecrets;
 
 namespace CodeInside.Hub.Job
 {
@@ -23,27 +19,13 @@ namespace CodeInside.Hub.Job
         {
             Trace.TraceInformation("Crawler Console App started.");
 
-            var legacyCrawlerResult = InvokeLegacyCrawler().Result;
-            Trace.TraceInformation("Legacy Crawler succeeded - now convert and write to BlobStorage!");
-
             var crawlerResult = InvokeCrawler().Result;
             Trace.TraceInformation("Crawler succeeded - now convert and write to BlobStorage!");
 
-            var legacyjson = JsonConvert.SerializeObject(legacyCrawlerResult, Constants.CrawlerJsonSerializerSettings);
             var json = JsonConvert.SerializeObject(crawlerResult, Constants.CrawlerJsonSerializerSettings);
 
             var host = new JobHost();
             host.Call(typeof(Program).GetMethod("SaveToAzure"), new { json });
-
-            host.Call(typeof(Program).GetMethod("SaveToAzureLegacy"), new { legacyjson });
-        }
-
-        [NoAutomaticTrigger]
-        public static void SaveToAzureLegacy([Blob("hub/data.json")]TextWriter writer, string json)
-        {
-            writer.Write(json);
-
-            Trace.TraceInformation("And... done.");
         }
 
         [NoAutomaticTrigger]
@@ -63,24 +45,6 @@ namespace CodeInside.Hub.Job
             secrets.TwitterConsumerKey = ConfigurationManager.AppSettings[ConfigKeys.SecretTwitterConsumerKey];
             secrets.TwitterConsumerSecret = ConfigurationManager.AppSettings[ConfigKeys.SecretTwitterConsumerSecret];
             var crawler = new Sloader.Crawler.MasterCrawler(config, secrets);
-
-            return await crawler.RunAllCrawlers();
-        }
-
-        public static async Task<CrawlerRun> InvokeLegacyCrawler()
-        {
-            var client = new HttpClient();
-#if DEBUG
-            var configString = await client.GetStringAsync("https://raw.githubusercontent.com/Code-Inside/Hub/master/CrawlerConfig.json");
-#else
-            var configString = await client.GetStringAsync(ConfigurationManager.AppSettings["MasterCrawlerJsonConfigPath"]);
-#endif
-            var config = JsonConvert.DeserializeObject<MasterCrawlerConfig>(configString);
-
-            var secrets = new MasterCrawlerSecrets();
-            secrets.TwitterConsumerKey = ConfigurationManager.AppSettings["TwitteroAuthConsumerKey"];
-            secrets.TwitterConsumerSecret = ConfigurationManager.AppSettings["TwitteroAuthConsumerSecret"];
-            var crawler = new MasterCrawler(config, secrets);
 
             return await crawler.RunAllCrawlers();
         }
