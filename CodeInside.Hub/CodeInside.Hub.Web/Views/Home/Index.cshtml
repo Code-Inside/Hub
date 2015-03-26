@@ -20,7 +20,7 @@
                     <a href="@blogEntry.Href" class="list-group-item">
                         <h4 class="list-group-item-heading">@blogEntry.Title</h4>
                         <p class="list-group-item-text">
-                            Published @blogEntry.PublishedOn.Humanize() | @("Tweets".ToQuantity(blogEntry.TweetsCount))
+                            Published @blogEntry.PublishedOn.Humanize() | @("Tweets".ToQuantity(blogEntry.TweetsCount)) | @("Facebook Shares".ToQuantity(blogEntry.FacebookCount))
                         </p>
                     </a>
                 }
