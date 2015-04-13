@@ -16,7 +16,9 @@ namespace CodeInside.Hub.Web.Controllers
         {
             var client = new HttpClient();
             var json = await client.GetStringAsync("https://codeinside.blob.core.windows.net/sloader/data.json");
-            var crawlerRun = JsonConvert.DeserializeObject<CrawlerRun>(json, Constants.CrawlerJsonSerializerSettings);
+
+            JsonConverter[] converters = { new CrawlerResultConverter() };
+            var crawlerRun = JsonConvert.DeserializeObject<CrawlerRun>(json, converters);
 
             var staticContent = Config.GetCodeInsideHubStaticData();
 
@@ -26,14 +28,14 @@ namespace CodeInside.Hub.Web.Controllers
             viewModel.Name = staticContent.Name;
             viewModel.Description = staticContent.Description;
             
-            var blog = crawlerRun.Results.SingleOrDefault(x => x.ResultType == KnownCrawler.Feed && x.ResultIdentifier == "http://blog.codeinside.eu/feed");
+            var blog = crawlerRun.Results.SingleOrDefault(x => x.ResultType == KnownCrawlerResultType.Feed && x.ResultIdentifier == "http://blog.codeinside.eu/feed");
             if (blog != null)
             {
                 var blogResult = (FeedCrawlerResult)blog;
                 viewModel.Blog = blogResult.FeedItems.OrderByDescending(x => x.PublishedOn).Take(5).ToList();
             }
 
-            var teamTwitter = crawlerRun.Results.Where(x => x.ResultType == KnownCrawler.TwitterTimeline &&
+            var teamTwitter = crawlerRun.Results.Where(x => x.ResultType == KnownCrawlerResultType.TwitterTimeline &&
                                                       (x.ResultIdentifier == "robert0muehsig" ||
                                                        x.ResultIdentifier == "oliverguhr") ||
                                                        x.ResultIdentifier == "codeinsideblog").ToList();
@@ -49,7 +51,7 @@ namespace CodeInside.Hub.Web.Controllers
                 viewModel.Twitter = viewModel.Twitter.Take(5).ToList();
             }
 
-            var github = crawlerRun.Results.Where(x => x.ResultType == KnownCrawler.Feed && 
+            var github = crawlerRun.Results.Where(x => x.ResultType == KnownCrawlerResultType.Feed && 
                                                        (x.ResultIdentifier == "https://github.com/robertmuehsig.atom" || 
                                                         x.ResultIdentifier == "https://github.com/oliverguhr.atom")).ToList();
             if (github.Any())
