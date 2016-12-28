@@ -18,4 +18,16 @@ TEST
 {% endfor %}
 </ul>
 
+Sloder
+
+<ul>
+{% for item in site.data.Sloader.Data.Blog.FeedItems %}
+  <li>
+
+      {{ item.Title }}
+
+  </li>
+{% endfor %}
+</ul>
+
 </div>
