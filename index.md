@@ -7,4 +7,15 @@ title-image: /assets/icons/logo_260x260.png
 
 <div>
 TEST
+
+<ul>
+{% for item in site.data.sloader.Data.Blog.FeedItems %}
+  <li>
+
+      {{ item.Title }}
+
+  </li>
+{% endfor %}
+</ul>
+
 </div>
