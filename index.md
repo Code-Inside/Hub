@@ -59,10 +59,10 @@ layout: page
                 </a>
 				
 				{% for tweetItem in site.data.Sloader.Data.Twitter.Tweets %}
-					<a href="{{ tweetItem.Href }}" class="list-group-item">
+					<a href="https://twitter.com/{{ tweetItem.UserScreenname }}/status/{{ tweetItem.Id }}" class="list-group-item">
                         <h4 class="list-group-item-heading">{{ tweetItem.Text }}</h4>
                         <p class="list-group-item-text">
-                            @{{ tweetItem.UserScreenname }} | Published On {{ tweetItem.PublishedOn }}
+                            @{{ tweetItem.UserScreenname }} | Published On {{ tweetItem.CreatedAt }}
                         </p>
                     </a>
 				{% endfor %}
