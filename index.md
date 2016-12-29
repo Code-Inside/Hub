@@ -15,7 +15,7 @@ layout: page
                     <h4 class="list-group-item-heading">Code Inside Blog</h4>
                 </a>
 				
-				{% for feedItem in site.data.Sloader.Data.Blog.FeedItems %}
+				{% for feedItem in site.data.Sloader.Data.Blog.FeedItems limit: 5 %}
 					<a href="{{ feedItem.Href }}" class="list-group-item">
                         <h4 class="list-group-item-heading">{{ feedItem.Title }}</h4>
                         <p class="list-group-item-text">
@@ -40,7 +40,7 @@ layout: page
                     <h4 class="list-group-item-heading">Code Inside Team @ GitHub</h4>
                 </a>
 				
-				{% for feedItem in site.data.Sloader.Data.GitHub.FeedItems %}
+				{% for feedItem in site.data.Sloader.Data.GitHub.FeedItems limit: 10 %}
 					<a href="{{ feedItem.Href }}" class="list-group-item">
                         <h4 class="list-group-item-heading">{{ feedItem.Title }}</h4>
                         <p class="list-group-item-text">
@@ -58,7 +58,7 @@ layout: page
                     <h4 class="list-group-item-heading">Code Inside Team @ Twitter</h4>
                 </a>
 				
-				{% for tweetItem in site.data.Sloader.Data.Twitter.Tweets %}
+				{% for tweetItem in site.data.Sloader.Data.Twitter.Tweets limit: 10 %}
 					<a href="https://twitter.com/{{ tweetItem.UserScreenname }}/status/{{ tweetItem.Id }}" class="list-group-item">
                         <h4 class="list-group-item-heading">{{ tweetItem.Text }}</h4>
                         <p class="list-group-item-text">
