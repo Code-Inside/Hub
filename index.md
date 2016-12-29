@@ -19,7 +19,7 @@ layout: page
 					<a href="{{ feedItem.Href }}" class="list-group-item">
                         <h4 class="list-group-item-heading">{{ feedItem.Title }}</h4>
                         <p class="list-group-item-text">
-                            Published On {{ feedItem.PublishedOn | date_to_long_string }}
+                            Published on {{ feedItem.PublishedOn | date_to_long_string }}
                         </p>
                     </a>
 				{% endfor %}
@@ -44,7 +44,7 @@ layout: page
 					<a href="{{ feedItem.Href }}" class="list-group-item">
                         <h4 class="list-group-item-heading">{{ feedItem.Title }}</h4>
                         <p class="list-group-item-text">
-                            Published On {{ feedItem.PublishedOn | date_to_long_string }}
+                            Published on {{ feedItem.PublishedOn | date_to_long_string }}
                         </p>
                     </a>
 				{% endfor %}
@@ -62,7 +62,7 @@ layout: page
 					<a href="https://twitter.com/{{ tweetItem.UserScreenname }}/status/{{ tweetItem.Id }}" class="list-group-item">
                         <h4 class="list-group-item-heading">{{ tweetItem.Text }}</h4>
                         <p class="list-group-item-text">
-                            @{{ tweetItem.UserScreenname }} | Published On {{ tweetItem.CreatedAt | date_to_long_string }}
+                            @{{ tweetItem.UserScreenname }} | Published on {{ tweetItem.CreatedAt | date_to_long_string }}
                         </p>
                     </a>
 				{% endfor %}
