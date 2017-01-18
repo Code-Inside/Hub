@@ -77,7 +77,7 @@ layout: page
     <div class="row">
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img width="300" height="200" alt="Robert Muehsig" src="/Content/Images/rmuehsig.png">
+                    <img width="300" height="200" alt="Robert Muehsig" src="{{BASE_Path}}/assets/icons/rmuehsig.png">
                     <div class="caption">
                         <h3>Robert Muehsig</h3>
                         <p>Software Developer - from Dresden, Germany, now living in Switzerland. ASP.NET MVP &amp; Web Geek.</p>
