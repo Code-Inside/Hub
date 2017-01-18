@@ -17,7 +17,7 @@ future: true
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
 #
-title : Code Inside Blog
+title : Code Inside Hub
 tagline: Development on the Microsoft Stack
 author :
   name : Code Inside Team
@@ -36,7 +36,7 @@ author :
 #
 production_url : https://blog.codeinside.eu
 
-github_repo_url: https://github.com/Code-Inside/Blog/
+github_repo_url: https://github.com/Code-Inside/Hub/
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
@@ -80,26 +80,16 @@ JB :
   # These paths are to the main pages Jekyll-Bootstrap ships with.
   # Some JB helpers refer to these paths; change them here if needed.
   #
-  archive_path: /archive.html
-  rss_path : /feed
 
-  # Settings for comments helper
-  # Set 'provider' to the comment provider you want to use.
-  # Set 'provider' to false to turn commenting off globally.
-  #
-  comments :
-    provider : disqus
-    disqus : 
-      short_name : codeinside-blog
 
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
   # Set 'provider' to false to turn analytics off globally.
   #
-  analytics :
-    provider : google
-    google :
-        tracking_id : 'UA-1562299-1'
+   #analytics :
+    # provider : google
+   #  google :
+    #     tracking_id : 'UA-1562299-1'
 
   # Settings for sharing helper.
   # Sharing is for things like tweet, plusone, like, reddit buttons etc.

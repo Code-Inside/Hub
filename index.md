@@ -1,5 +1,6 @@
 ---
 layout: page
+title: Home
 ---
 {% include JB/setup %}
 
@@ -77,7 +78,7 @@ layout: page
     <div class="row">
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img width="300" height="200" alt="Robert Muehsig" src="{{BASE_Path}}/assets/icons/rmuehsig.png">
+                    <img width="300" height="200" alt="Robert Muehsig" src="{{BASE_Path}}assets/icons/rmuehsig.png">
                     <div class="caption">
                         <h3>Robert Muehsig</h3>
                         <p>Software Developer - from Dresden, Germany, now living in Switzerland. ASP.NET MVP &amp; Web Geek.</p>
@@ -106,7 +107,7 @@ layout: page
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img width="300" height="200" alt="Oliver Guhr" src="/Content/Images/oguhr.png">
+                    <img width="300" height="200" alt="Oliver Guhr" src="{{BASE_Path}}assets/icons/oguhr.png">
                     <div class="caption">
                         <h3>Oliver Guhr</h3>
                         <p>Software Developer - from Dresden, Germany. Co-Blog-Author.</p>
@@ -126,7 +127,7 @@ layout: page
             </div>
             <div class="col-md-4">
                 <div class="thumbnail">
-                    <img width="300" height="200" alt="Antje Kilian" src="/Content/Images/akilian.png">
+                    <img width="300" height="200" alt="Antje Kilian" src="{{BASE_Path}}assets/icons/akilian.png">
                     <div class="caption">
                         <h3>Antje Kilian</h3>
                         <p>IT-Law consultant, translator and Geek Girl - from Dresden, Germany.</p>
