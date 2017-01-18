@@ -3,8 +3,9 @@ Hub
 
 Hub for all CodeInside.eu related Stuff
 
-Azure Website:
-https://codeinside-hub-web.azurewebsites.net/
+"Typical" Jekyll-Powered Website, except for the actual data.
 
-Build Status:
-[![Build status](https://ci.appveyor.com/api/projects/status/sg9k8xsu0saey9ua/branch/master)](https://ci.appveyor.com/project/robertmuehsig/hub/branch/master)
+Powered by Sloader
+==================
+
+This site is powered by [Sloader](https://github.com/Code-Inside/Sloader) and uses this [Sloader.yml](https://raw.githubusercontent.com/Code-Inside/Hub/gh-pages/_data/Sloader.yml) and pushes the content back to this repository and Jekyll will build the site for us.
