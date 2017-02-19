@@ -15,6 +15,11 @@ Crawler:
   - Handle: codeinsideblog;robert0muehsig;oliverguhr
     IncludeRetweets: false
     Key: Twitter
+  TwitterUsersToCrawl:
+  - Handle: robert0muehsig
+    Key: TwitterUserRobert
+  - Handle: oliverguhr
+    Key: TwitterUserOliver
   GitHubEventsToCrawl:
   - Organization: code-inside
     Key: GitHubEvents
