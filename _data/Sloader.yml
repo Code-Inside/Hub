@@ -15,7 +15,10 @@ Crawler:
   - Handle: codeinsideblog;robert0muehsig;oliverguhr
     IncludeRetweets: false
     Key: Twitter
-
+  GitHubEventsToCrawl:
+  - Organization: code-inside
+    Key: GitHubEvents
+   
 Drop:
   GitHubDrops:
   - Owner: "Code-Inside"
