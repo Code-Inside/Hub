@@ -95,7 +95,7 @@ layout: page
 					
 					</h4>
                         		<p class="list-group-item-text">
-                            			Published on {{ eventItem.CreatedAt | date_to_long_string }}
+                            			on {{ eventItem.CreatedAt | date_to_long_string }} by {{ eventItem.Actor }}
                         		</p>
                     		</a>
 				{% endfor %}
