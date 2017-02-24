@@ -105,6 +105,39 @@ layout: page
 </section>
 
 <section>
+    <h2><strong>//</strong> Code-Inside Users @ GitHub</h2>
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="list-group">
+                <a href="https://github.com/Code-Inside/" class="list-group-item active">
+                    <h4 class="list-group-item-heading">Code Inside Org @ GitHub</h4>
+                </a>
+				
+				{% for eventItem in site.data.Sloader.Data.GitHubEventsUser.Events limit: 10 %}
+				<a href="{{ eventItem.RelatedUrl }}" class="list-group-item">
+                        		<h4 class="list-group-item-heading">
+					{% if eventItem.Type == "PushEvent" %}
+						<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+					{% endif %}
+					
+					
+					{{ eventItem.RelatedDescription }}
+					
+					</h4>
+                        		<p class="list-group-item-text">
+                            			on {{ eventItem.CreatedAt | date_to_long_string }} by {{ eventItem.Actor }}
+                        		</p>
+                    		</a>
+				{% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
     <h2><strong>//</strong>&nbsp;Team</h2>
 
     <div class="row">
