@@ -22,8 +22,9 @@ Crawler:
     Key: TwitterUserOliver
   GitHubEventsToCrawl:
   - Organization: code-inside
-    Key: GitHubEvents
-   
+    Key: GitHubEventsOrg
+  - User: robertmuehsig
+    Key: GitHubEventsUser   
 Drop:
   GitHubDrops:
   - Owner: "Code-Inside"
