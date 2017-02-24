@@ -23,7 +23,7 @@ Crawler:
   GitHubEventsToCrawl:
   - Organization: code-inside
     Key: GitHubEventsOrg
-  - User: robertmuehsig
+  - User: robertmuehsig;oliverguhr
     Key: GitHubEventsUser   
 Drop:
   GitHubDrops:
