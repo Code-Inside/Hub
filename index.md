@@ -30,11 +30,8 @@ layout: page
 
 <section>
     <h2><strong>//</strong> Social</h2>
-
     <div class="row">
-
-        <div class="col-md-6">
-
+        <div class="col-md-12">
             <div class="list-group">
                 <a href="https://github.com/Code-Inside/" class="list-group-item active">
                     <h4 class="list-group-item-heading">Code Inside Org @ GitHub</h4>
@@ -65,9 +62,9 @@ layout: page
 				{% endfor %}
             </div>
         </div>
-        
-        <div class="col-md-6">
-
+    </div>
+    <div class="row"> 
+        <div class="col-md-12">
             <div class="list-group">
                 <a href="http://blog.codeinside.eu" class="list-group-item active">
                     <h4 class="list-group-item-heading">Code Inside Team @ Twitter</h4>
@@ -83,19 +80,12 @@ layout: page
 				{% endfor %}
             </div>
         </div>
-    </div>
-</section>
-
-<section>
-    <h2><strong>//</strong> Code-Inside Users @ GitHub</h2>
-
-    <div class="row">
-
+	</div>
+	<div class="row">  
         <div class="col-md-12">
-
             <div class="list-group">
                 <a href="https://github.com/Code-Inside/" class="list-group-item active">
-                    <h4 class="list-group-item-heading">Code Inside Users @ GitHub</h4>
+                    <h4 class="list-group-item-heading">Code Inside Team @ GitHub</h4>
                 </a>
 				
 				{% for eventItem in site.data.Sloader.Data.GitHubEventsUser.Events limit: 10 %}
