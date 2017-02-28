@@ -8,9 +8,6 @@ Crawler:
   - Key: Blog
     Url: http://blog.codeinside.eu/feed
     LoadSocialLinkCounters: false
-  - Key: GitHub
-    Url: https://github.com/robertmuehsig.atom; https://github.com/oliverguhr.atom
-    LoadSocialLinkCounters: false
   TwitterTimelinesToCrawl:
   - Handle: codeinsideblog;robert0muehsig;oliverguhr
     IncludeRetweets: false
