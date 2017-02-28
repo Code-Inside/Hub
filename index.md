@@ -36,17 +36,32 @@ layout: page
         <div class="col-md-6">
 
             <div class="list-group">
-                <a href="http://blog.codeinside.eu" class="list-group-item active">
-                    <h4 class="list-group-item-heading">Code Inside Team @ GitHub</h4>
+                <a href="https://github.com/Code-Inside/" class="list-group-item active">
+                    <h4 class="list-group-item-heading">Code Inside Org @ GitHub</h4>
                 </a>
 				
-				{% for feedItem in site.data.Sloader.Data.GitHub.FeedItems limit: 10 %}
-					<a href="{{ feedItem.Href }}" class="list-group-item">
-                        <h4 class="list-group-item-heading">{{ feedItem.Title }}</h4>
-                        <p class="list-group-item-text">
-                            Published on {{ feedItem.PublishedOn | date_to_long_string }}
-                        </p>
-                    </a>
+				{% for eventItem in site.data.Sloader.Data.GitHubEventsOrg.Events limit: 10 %}
+				<a href="{{ eventItem.RelatedUrl }}" class="list-group-item">
+                        		<h4 class="list-group-item-heading">
+					{% if eventItem.Type == "PushEvent" %}
+						<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+					{% endif %}
+					{% if eventItem.Type == "PullRequestEvent" %}
+						<i class="fa fa-code-fork" aria-hidden="true"></i>
+					{% endif %}
+					{% if eventItem.Type == "WatchEvent" %}
+						<i class="fa fa-eye" aria-hidden="true"></i>
+					{% endif %}
+					
+					
+					
+					{{ eventItem.RelatedDescription }}
+					
+					</h4>
+                        		<p class="list-group-item-text">
+                            			on {{ eventItem.CreatedAt | date_to_long_string }} by {{ eventItem.Actor }}
+                        		</p>
+                    		</a>
 				{% endfor %}
             </div>
         </div>
@@ -72,39 +87,6 @@ layout: page
 </section>
 
 <section>
-    <h2><strong>//</strong> Code-Inside Org @ GitHub</h2>
-
-    <div class="row">
-
-        <div class="col-md-12">
-
-            <div class="list-group">
-                <a href="https://github.com/Code-Inside/" class="list-group-item active">
-                    <h4 class="list-group-item-heading">Code Inside Org @ GitHub</h4>
-                </a>
-				
-				{% for eventItem in site.data.Sloader.Data.GitHubEventsOrg.Events limit: 10 %}
-				<a href="{{ eventItem.RelatedUrl }}" class="list-group-item">
-                        		<h4 class="list-group-item-heading">
-					{% if eventItem.Type == "PushEvent" %}
-						<i class="fa fa-cloud-upload" aria-hidden="true"></i>
-					{% endif %}
-					
-					
-					{{ eventItem.RelatedDescription }}
-					
-					</h4>
-                        		<p class="list-group-item-text">
-                            			on {{ eventItem.CreatedAt | date_to_long_string }} by {{ eventItem.Actor }}
-                        		</p>
-                    		</a>
-				{% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
     <h2><strong>//</strong> Code-Inside Users @ GitHub</h2>
 
     <div class="row">
@@ -113,7 +95,7 @@ layout: page
 
             <div class="list-group">
                 <a href="https://github.com/Code-Inside/" class="list-group-item active">
-                    <h4 class="list-group-item-heading">Code Inside Org @ GitHub</h4>
+                    <h4 class="list-group-item-heading">Code Inside Users @ GitHub</h4>
                 </a>
 				
 				{% for eventItem in site.data.Sloader.Data.GitHubEventsUser.Events limit: 10 %}
@@ -122,7 +104,12 @@ layout: page
 					{% if eventItem.Type == "PushEvent" %}
 						<i class="fa fa-cloud-upload" aria-hidden="true"></i>
 					{% endif %}
-					
+					{% if eventItem.Type == "PullRequestEvent" %}
+						<i class="fa fa-code-fork" aria-hidden="true"></i>
+					{% endif %}
+					{% if eventItem.Type == "WatchEvent" %}
+						<i class="fa fa-eye" aria-hidden="true"></i>
+					{% endif %}
 					
 					{{ eventItem.RelatedDescription }}
 					
