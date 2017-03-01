@@ -49,8 +49,12 @@ layout: page
 					{% if eventItem.Type == "WatchEvent" %}
 						<i class="fa fa-eye" aria-hidden="true"></i>
 					{% endif %}
-					
-					
+					{% if eventItem.Type == "IssuesEvent" %}
+						<i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+					{% endif %}
+					{% if eventItem.Type == "IssueCommentEvent" %}
+						<i class="fa fa-commenting" aria-hidden="true"></i>
+					{% endif %}
 					
 					{{ eventItem.RelatedDescription }}
 					
@@ -99,6 +103,12 @@ layout: page
 					{% endif %}
 					{% if eventItem.Type == "WatchEvent" %}
 						<i class="fa fa-eye" aria-hidden="true"></i>
+					{% endif %}
+					{% if eventItem.Type == "IssuesEvent" %}
+						<i class="fa fa-sticky-note-o" aria-hidden="true"></i>
+					{% endif %}
+					{% if eventItem.Type == "IssueCommentEvent" %}
+						<i class="fa fa-commenting" aria-hidden="true"></i>
 					{% endif %}
 					
 					{{ eventItem.RelatedDescription }}
