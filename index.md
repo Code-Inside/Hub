@@ -55,6 +55,9 @@ layout: page
 					{% if eventItem.Type == "IssueCommentEvent" %}
 						<i class="fa fa-commenting" aria-hidden="true"></i>
 					{% endif %}
+					{% if eventItem.Type == "CreateEvent" %}
+						<i class="fa fa-plus" aria-hidden="true"></i>
+					{% endif %}
 					
 					{{ eventItem.RelatedDescription }}
 					
@@ -109,6 +112,9 @@ layout: page
 					{% endif %}
 					{% if eventItem.Type == "IssueCommentEvent" %}
 						<i class="fa fa-commenting" aria-hidden="true"></i>
+					{% endif %}
+					{% if eventItem.Type == "CreateEvent" %}
+						<i class="fa fa-plus" aria-hidden="true"></i>
 					{% endif %}
 					
 					{{ eventItem.RelatedDescription }}
