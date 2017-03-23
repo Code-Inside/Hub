@@ -58,6 +58,9 @@ layout: page
 					{% if eventItem.Type == "CreateEvent" %}
 						<i class="fa fa-plus" aria-hidden="true"></i>
 					{% endif %}
+					{% if eventItem.Type == "ForkEvent" %}
+						<i class="fa fa-code-fork" aria-hidden="true"></i>
+					{% endif %}
 					
 					{{ eventItem.RelatedDescription }}
 					
@@ -115,6 +118,9 @@ layout: page
 					{% endif %}
 					{% if eventItem.Type == "CreateEvent" %}
 						<i class="fa fa-plus" aria-hidden="true"></i>
+					{% endif %}
+					{% if eventItem.Type == "ForkEvent" %}
+						<i class="fa fa-code-fork" aria-hidden="true"></i>
 					{% endif %}
 					
 					{{ eventItem.RelatedDescription }}
