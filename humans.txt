@@ -1,4 +1,4 @@
-﻿/* TEAM */
+/* TEAM */
 
 Robert Muehsig
 Software Developer - from Dresden, Germany, now living in Switzerland. ASP.NET MVP & Web Geek.
