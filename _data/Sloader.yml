@@ -8,6 +8,9 @@ Crawler:
   - Key: Blog
     Url: http://blog.codeinside.eu/feed
     LoadSocialLinkCounters: false
+  - Key: Olivers Blog
+    Url: https://www.oliverguhr.eu/feed
+    LoadSocialLinkCounters: false
   TwitterTimelinesToCrawl:
   - Handle: codeinsideblog;robert0muehsig;oliverguhr
     IncludeRetweets: false
