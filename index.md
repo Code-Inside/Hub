@@ -11,7 +11,7 @@ layout: page
         <div class="col-md-12">
 
             <div class="list-group">
-                <a href="http://blog.codeinside.eu" class="list-group-item active">
+                <a href="https://blog.codeinside.eu" class="list-group-item active">
                     <h4 class="list-group-item-heading">Code Inside Blog</h4>
                 </a>
 				
@@ -79,7 +79,7 @@ layout: page
     <div class="row"> 
         <div class="col-md-12">
             <div class="list-group">
-                <a href="http://blog.codeinside.eu" class="list-group-item active">
+                <a href="https://blog.codeinside.eu" class="list-group-item active">
                     <h4 class="list-group-item-heading">Code Inside Team @ Twitter</h4>
                 </a>
 				
@@ -153,7 +153,7 @@ layout: page
                         <h3>Robert Muehsig</h3>
                         <p>Software Developer - from Dresden, Germany, now living in Switzerland. ASP.NET MVP &amp; Web Geek.</p>
                         <p>
-                                <a href="http://twitter.com/robert0muehsig" class="btn btn-xs btn-info">
+                                <a href="https://twitter.com/robert0muehsig" class="btn btn-xs btn-info">
                                     Twitter
                                 </a>
                                 <a href="https://github.com/robertmuehsig" class="btn btn-xs btn-info">
@@ -162,13 +162,13 @@ layout: page
                                 <a href="http://mvp.microsoft.com/en-us/mvp/Robert Muehsig-4020675" class="btn btn-xs btn-info">
                                     ASP.NET MVP
                                 </a>
-                                <a href="http://www.xing.com/profile/Robert_Muehsig" class="btn btn-xs btn-info">
+                                <a href="https://www.xing.com/profile/Robert_Muehsig" class="btn btn-xs btn-info">
                                     XING
                                 </a>
                                 <a href="https://speakerdeck.com/robertmuehsig" class="btn btn-xs btn-info">
                                     SpeakerDeck
                                 </a>
-                                <a href="http://stackoverflow.com/users/602449/robert-muehsig" class="btn btn-xs btn-info">
+                                <a href="https://stackoverflow.com/users/602449/robert-muehsig" class="btn btn-xs btn-info">
                                     Stack Overflow
                                 </a>
                         </p>
@@ -182,13 +182,16 @@ layout: page
                         <h3>Oliver Guhr</h3>
                         <p>Software Developer - from Dresden, Germany. Co-Blog-Author.</p>
                         <p>
-                                <a href="http://twitter.com/oliverguhr" class="btn btn-xs btn-info">
+				<a href="https://www.oliverguhr.eu" class="btn btn-xs btn-info">
+                                    Olivers Blog
+                                </a>
+                                <a href="https://twitter.com/oliverguhr" class="btn btn-xs btn-info">
                                     Twitter
                                 </a>
                                 <a href="https://github.com/oliverguhr" class="btn btn-xs btn-info">
                                     GitHub
                                 </a>
-                                <a href="http://www.xing.com/profile/Oliver_Guhr" class="btn btn-xs btn-info">
+                                <a href="https://www.xing.com/profile/Oliver_Guhr" class="btn btn-xs btn-info">
                                     XING
                                 </a>
                         </p>
@@ -205,7 +208,7 @@ layout: page
                                 <a href="https://twitter.com/Antje_Kilian" class="btn btn-xs btn-info">
                                     Twitter
                                 </a>
-                                <a href="http://www.xing.com/profile/Antje_Kilian5" class="btn btn-xs btn-info">
+                                <a href="https://www.xing.com/profile/Antje_Kilian5" class="btn btn-xs btn-info">
                                     XING
                                 </a>
                         </p>
