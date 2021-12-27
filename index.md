@@ -151,7 +151,7 @@ layout: page
                     <img width="300" height="200" alt="Robert Muehsig" src="{{BASE_Path}}assets/icons/rmuehsig.png">
                     <div class="caption">
                         <h3>Robert Muehsig</h3>
-                        <p>Software Developer - from Dresden, Germany, now living in Switzerland. ASP.NET MVP &amp; Web Geek.</p>
+                        <p>Software Developer - from Saxony, Germany. ASP.NET MVP &amp; Web Geek.</p>
                         <p>
                                 <a href="https://twitter.com/robert0muehsig" class="btn btn-xs btn-info">
                                     Twitter
