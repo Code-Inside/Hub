@@ -114,7 +114,7 @@ layout: page
                                     GitHub
                                 </a>
                                 <a href="http://mvp.microsoft.com/en-us/mvp/Robert Muehsig-4020675" class="btn btn-xs btn-info">
-                                    ASP.NET MVP
+                                    Microsoft MVP
                                 </a>
                                 <a href="https://www.xing.com/profile/Robert_Muehsig" class="btn btn-xs btn-info">
                                     XING
