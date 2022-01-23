@@ -6,7 +6,7 @@ Secrets:
 Crawler:
   FeedsToCrawl:
   - Key: R_Blog
-    Url: https://blog.codeinside.eu/feed
+    Url: https://blog.codeinside.eu/feed/
     LoadSocialLinkCounters: false
   - Key: O_Blog
     Url: https://www.oliverguhr.eu/feed
