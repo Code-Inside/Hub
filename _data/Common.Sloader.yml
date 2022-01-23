@@ -21,8 +21,6 @@ Crawler:
   - Handle: oliverguhr
     Key: TwitterUserOliver
   GitHubEventsToCrawl:
-  - Organization: code-inside
-    Key: GitHubEventsOrg
   - User: robertmuehsig;oliverguhr
     Key: GitHubEventsUser   
 Drop:
