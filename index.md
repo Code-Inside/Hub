@@ -15,7 +15,7 @@ layout: page
                     <h4 class="list-group-item-heading">Code Inside Blog</h4>
                 </a>
 				
-				{% for feedItem in site.data.Sloader.Data.Blog.FeedItems limit: 5 %}
+				{% for feedItem in site.data.Sloader.Data.R_Blog.FeedItems limit: 5 %}
 					<a href="{{ feedItem.Href }}" class="list-group-item">
                         <h4 class="list-group-item-heading">{{ feedItem.Title }}</h4>
                         <p class="list-group-item-text">
