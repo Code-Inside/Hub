@@ -12,7 +12,7 @@ Crawler:
     Url: https://www.oliverguhr.eu/feed
     LoadSocialLinkCounters: false
   TwitterTimelinesToCrawl:
-  - Handle: codeinsideblog;robert0muehsig;oliverguhr
+  - Handle: robert0muehsig;oliverguhr
     IncludeRetweets: false
     Key: Twitter
   TwitterUsersToCrawl:
