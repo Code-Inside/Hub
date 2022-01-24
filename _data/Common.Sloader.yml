@@ -5,9 +5,12 @@ Secrets:
 
 Crawler:
   FeedsToCrawl:
-  - Key: R_Blog
+  - Key: Blog
     Url: https://blog.codeinside.eu/feed/
     LoadSocialLinkCounters: false
+  - Key: YouTube
+    Url: https://www.youtube.com/feeds/videos.xml?channel_id=UCqE3og-pkA7DO90lqNHAR5Q
+    LoadSocialLinkCounters: false    
   - Key: O_Blog
     Url: https://www.oliverguhr.eu/feed
     LoadSocialLinkCounters: false
