@@ -29,6 +29,27 @@ layout: page
 </section>
 
 <section>
+    <h2><strong>//</strong>&nbsp;Videos</h2>
+
+    <div class="row">
+	    {% for youTubeFeedItem in site.data.Sloader.Data.YouTube.FeedItems limit: 6 %}
+            <div class="col-md-4">
+		<a href="{{ youTubeFeedItem.Href }}" title="{{ youTubeFeedItem.Title }}">
+                <div class="thumbnail">
+                    <img width="480" height="360" alt="{{ youTubeFeedItem.Title }}" src="{{ youTubeFeedItem.Thumbnail }}">
+                    <div class="caption">
+                        <h3>{{ youTubeFeedItem.Title }}</h3>
+                    </div>
+                </div>
+		</a>
+            </div>
+	    {% endfor %}
+    </div>
+</section>
+
+
+
+<section>
     <h2><strong>//</strong> Social</h2>
     <div class="row"> 
         <div class="col-md-12">
