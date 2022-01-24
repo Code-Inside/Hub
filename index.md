@@ -34,11 +34,11 @@ layout: page
     <div class="row">
 	    {% for youTubeFeedItem in site.data.Sloader.Data.YouTube.FeedItems limit: 3 %}
             <div class="col-md-4">
-		<a href="{{ youTubeFeedItem.Href }}" title="{{ youTubeFeedItem.Title | strip_html }}">
+		<a href="{{ youTubeFeedItem.Href }}" title="{{ youTubeFeedItem.Title | strip_html | escape }}">
                 <div class="thumbnail">
-                    <img width="480" height="360" alt="{{ youTubeFeedItem.Title | strip_html }}" src="{{ youTubeFeedItem.Thumbnail }}">
+                    <img width="480" height="360" alt="{{ youTubeFeedItem.Title | strip_html | escape  }}" src="{{ youTubeFeedItem.Thumbnail }}">
                     <div class="caption">
-                        <h3>{{ youTubeFeedItem.Title | strip_html }}</h3>
+                        <h3>{{ youTubeFeedItem.Title | strip_html | escape }}</h3>
                     </div>
                 </div>
 		</a>
